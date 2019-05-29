@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.activity_main, mobileArray);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.activity_main, mobileArray);
 
         mPostList = findViewById(R.id.postList);
         mPostList.setAdapter(adapter);
