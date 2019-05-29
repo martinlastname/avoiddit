@@ -1,4 +1,4 @@
-package com.example.avoiddit;
+package com.example.avoiddit.view;
 
 import android.content.Context;
 import android.view.ViewGroup;
