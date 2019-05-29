@@ -1,19 +1,21 @@
-package com.example.avoiddit;
+package com.example.avoiddit.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.ScrollView;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.avoiddit.R;
 
-    private ScrollView mPostList;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mPostList = findViewById(R.id.postList);
     }
 }
