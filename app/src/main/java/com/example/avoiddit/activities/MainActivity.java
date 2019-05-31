@@ -3,18 +3,12 @@ package com.example.avoiddit.activities;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.ScrollView;
+
+import com.github.jreddit.entity.Submission;
 
 import com.example.avoiddit.R;
 import com.example.avoiddit.model.RedditFetcher;
-import com.github.jreddit.entity.Submission;
-import com.github.jreddit.retrieval.Submissions;
 
 import java.util.List;
 
