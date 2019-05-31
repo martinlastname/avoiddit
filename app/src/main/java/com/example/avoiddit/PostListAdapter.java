@@ -1,28 +1,36 @@
 package com.example.avoiddit;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.ArrayAdapter;
 
-public class PostListAdapter extends BaseAdapter {
+import com.example.avoiddit.model.PostBlock;
 
-    @Override
-    public int getCount() {
-        return 0;
+import java.util.List;
+
+public class PostListAdapter extends ArrayAdapter<PostBlock> {
+
+    private Context mContext;
+
+
+    public PostListAdapter(Context context, int resource, List objects) {
+        super(context, resource, objects);
+    }
+
+    public void add(PostBlock object){
+
     }
 
     @Override
-    public Object getItem(int position) {
-        return null;
-    }
+    public View getView(int position, View convertView, ViewGroup parent){
+        View listItem = convertView;
+        if(listItem == null){
+            listItem = LayoutInflater.from(mContext).inflate(R.layout.post_layout, parent, false);
+        }
 
-    @Override
-    public long getItemId(int position) {
-        return 0;
-    }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+        return listItem;
     }
 }
