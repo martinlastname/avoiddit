@@ -21,6 +21,11 @@ android {
         pickFirst 'META-INF/plexus/components.xml'
         pickFirst 'META-INF/DEPENDENCIES'
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {

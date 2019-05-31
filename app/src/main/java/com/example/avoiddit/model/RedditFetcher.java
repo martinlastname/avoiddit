@@ -1,6 +1,8 @@
 package com.example.avoiddit.model;
 
 
+import android.util.Log;
+
 import com.github.jreddit.entity.Submission;
 import com.github.jreddit.entity.User;
 import com.github.jreddit.retrieval.Submissions;
@@ -19,14 +21,16 @@ public class RedditFetcher {
     private User muser;
 
     public RedditFetcher(String inUserN, String inPassW) {
-        this.userN = inUserN;
-        this.passW = inPassW;
-        this.mrestClient = new HttpRestClient();
+        userN = inUserN;
+        passW = inPassW;
+        mrestClient = new HttpRestClient();
         mrestClient.setUserAgent("bot/1.0 by name");
 
         muser = new User(mrestClient, userN, passW);
         try {
+            Log.d("Login", "Start");
             muser.connect();
+            Log.d("Login", "Success");
         } catch (Exception e) {
             e.printStackTrace();
         }
