@@ -7,6 +7,10 @@ public class PostBlock implements Serializable {
     private String description = "N/A";
     private Integer charCount = 0;
 
+    public PostBlock(String t, String d){
+        title = t;
+        description = d;
+    }
 
     public void setTitle(String inTitle) {
         this.title = inTitle;

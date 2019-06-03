@@ -15,12 +15,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 // TODO change to <PostBlock>
-public class PostListAdapter extends ArrayAdapter<String> {
+public class PostListAdapter extends ArrayAdapter<PostBlock> {
 
     private Context mContext;
-    private List<String> contentList;
+    private List<PostBlock> contentList;
 
-    public PostListAdapter(Context context, int resource, ArrayList<String> list) {
+    public PostListAdapter(Context context, int resource, ArrayList<PostBlock> list) {
         super(context, resource, list);
         mContext = context;
         contentList = list;
@@ -37,8 +37,11 @@ public class PostListAdapter extends ArrayAdapter<String> {
             listItem = LayoutInflater.from(mContext).inflate(R.layout.layout_post, parent, false);
         }
 
-        TextView title = (TextView) listItem.findViewById(R.id.textView_Title);
-        title.setText(contentList.get(position));
+        TextView title = listItem.findViewById(R.id.textView_Title);
+        title.setText(contentList.get(position).getTitle());
+
+        TextView description = listItem.findViewById(R.id.textView_Description);
+        description.setText(contentList.get(position).getDescription());
 
 
         return listItem;
