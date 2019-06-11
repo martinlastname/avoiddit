@@ -14,7 +14,6 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO change to <PostBlock>
 public class PostListAdapter extends ArrayAdapter<PostBlock> {
 
     private Context mContext;
@@ -26,9 +25,7 @@ public class PostListAdapter extends ArrayAdapter<PostBlock> {
         contentList = list;
     }
 
-    public void add(PostBlock object){
-
-    }
+    // add() is implemented for us by parent class.
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
