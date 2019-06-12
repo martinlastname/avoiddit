@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.avoiddit.PostListAdapter;
 import com.example.avoiddit.R;
@@ -16,6 +17,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
+    // Constants for use as keys when adding data to Intents.
+    public static final String EXTRA_TITLE = "com.example.avoiddit.TITLE";
+    public static final String EXTRA_CONTENT = "com.example.avoiddit.TITLE";
 
     ArrayList<String> testMobileArray = new ArrayList<String>(Arrays.asList("Android", "Linux", "IPhone", "Zune", "WindowsMobile", "Roku",
             "Blackberry", "PHP", "WebOS", "Padding", "Ubuntu", "Pillow Fortran", "Windows7",
@@ -42,8 +46,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void openPostPage(View view){
+    public void onPostItemClick(View view){
         Intent intent = new Intent(this, PostPageActivity.class);
+        TextView title = view.findViewById(R.id.textView_Title);
+        TextView content = findViewById(R.id.textView_Description);
+        intent.putExtra(EXTRA_TITLE, title.getText().toString());
+        intent.putExtra(EXTRA_CONTENT, content.getText().toString());
         startActivity(intent);
     }
 }
