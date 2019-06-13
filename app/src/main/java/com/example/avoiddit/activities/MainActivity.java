@@ -48,9 +48,7 @@ public class MainActivity extends AppCompatActivity {
     public void onPostItemClick(View view){
         Intent intent = new Intent(this, PostPageActivity.class);
         TextView title = view.findViewById(R.id.textView_postList_Title);
-        Log.d("TITLE ---", title.getText().toString());
         TextView content = view.findViewById(R.id.textView_postList_Content);
-        Log.d("CONTENT ---", content.getText().toString());
         intent.putExtra(EXTRA_TITLE, title.getText().toString());
         intent.putExtra(EXTRA_CONTENT, content.getText().toString());
         startActivity(intent);

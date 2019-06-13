@@ -17,11 +17,12 @@ public class PostPageActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String title = intent.getStringExtra(MainActivity.EXTRA_TITLE);
-        Log.d("ACTIVITY TITLE ---", title);
         String content = intent.getStringExtra(MainActivity.EXTRA_CONTENT);
-        Log.d("ACTIVITY CONTENT ---", content);
-        String body = title + "\n" + content;
-        TextView textView = findViewById(R.id.textView_postActivity_title);
-        textView.setText(body);
+
+        TextView textView_title = findViewById(R.id.textView_postActivity_title);
+        TextView textView_content = findViewById(R.id.textView_postActivity_Content);
+
+        textView_title.setText(title);
+        textView_content.setText(content);
     }
 }
