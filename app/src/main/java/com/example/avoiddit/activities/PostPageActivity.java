@@ -15,8 +15,8 @@ public class PostPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_post_page);
 
         Intent intent = getIntent();
-        String body = intent.getStringExtra(MainActivity.EXTRA_TITLE);
-        TextView textView = findViewById(R.id.textView_Test);
+        String body = intent.getStringExtra(MainActivity.EXTRA_TITLE) + "\n" + intent.getStringExtra(MainActivity.EXTRA_CONTENT);
+        TextView textView = findViewById(R.id.textView_postActivity_title);
         textView.setText(body);
     }
 }

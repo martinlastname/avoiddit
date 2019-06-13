@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -48,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onPostItemClick(View view){
         Intent intent = new Intent(this, PostPageActivity.class);
-        TextView title = view.findViewById(R.id.textView_Title);
-        TextView content = findViewById(R.id.textView_Description);
+        TextView title = view.findViewById(R.id.textView_postList_Title);
+        TextView content = view.findViewById(R.id.textView_postList_Content);
         intent.putExtra(EXTRA_TITLE, title.getText().toString());
         intent.putExtra(EXTRA_CONTENT, content.getText().toString());
         startActivity(intent);

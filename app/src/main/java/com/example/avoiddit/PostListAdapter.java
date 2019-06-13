@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import com.example.avoiddit.model.PostBlock;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,10 +32,10 @@ public class PostListAdapter extends ArrayAdapter<PostBlock> {
             listItem = LayoutInflater.from(mContext).inflate(R.layout.layout_post, parent, false);
         }
 
-        TextView title = listItem.findViewById(R.id.textView_Title);
+        TextView title = listItem.findViewById(R.id.textView_postList_Title);
         title.setText(contentList.get(position).getTitle());
 
-        TextView description = listItem.findViewById(R.id.textView_Description);
+        TextView description = listItem.findViewById(R.id.textView_postList_Content);
         description.setText(contentList.get(position).getDescription());
 
 

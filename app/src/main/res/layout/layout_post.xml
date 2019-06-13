@@ -8,7 +8,7 @@
     android:onClick="onPostItemClick">
 
     <TextView
-        android:id="@+id/textView_Title"
+        android:id="@+id/textView_postList_Title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -20,13 +20,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView_Description"
+        android:id="@+id/textView_postList_Content"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_Title" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_postList_Title" />
 
 </android.support.constraint.ConstraintLayout>
