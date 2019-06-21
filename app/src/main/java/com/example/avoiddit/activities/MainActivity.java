@@ -30,12 +30,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        populatePostList();
+
+
+        //populatePostList();
+        testMastodon();
 
         PostListAdapter adapter = new PostListAdapter(this, android.R.layout.simple_list_item_1, mPostList);
 
         ListView postList = findViewById(R.id.postList);
         postList.setAdapter(adapter);
+
+
+
+    }
+
+    /**
+     * Method only for use while implementing Mastodon support.
+     * Intended to conveniently separate messy/temporary branch/feat specific code.
+     */
+    private void testMastodon(){
+
     }
 
     private void populatePostList(){
@@ -43,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
             mPostList.add(new PostBlock("item: " + (i + 1), "content: " + (100 - i)));
         }
 
+    }
+
+    private void populatePostList(ArrayList<PostBlock> posts){
+        for (PostBlock p : posts){
+            mPostList.add(p);
+        }
     }
 
     public void onPostItemClick(View view){

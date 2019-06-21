@@ -1,5 +1,6 @@
-package com.example.avoiddit;
+package com.example.avoiddit.model;
 
+import com.example.avoiddit.UserPreferences;
 import com.example.avoiddit.model.PostBlock;
 
 import java.util.ArrayList;
