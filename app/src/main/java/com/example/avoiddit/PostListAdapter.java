@@ -36,7 +36,7 @@ public class PostListAdapter extends ArrayAdapter<PostBlock> {
         title.setText(contentList.get(position).getTitle());
 
         TextView description = listItem.findViewById(R.id.textView_postList_Content);
-        description.setText(contentList.get(position).getDescription());
+        description.setText(contentList.get(position).getContent());
 
 
         return listItem;

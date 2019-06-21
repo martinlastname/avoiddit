@@ -4,12 +4,12 @@ import java.io.Serializable;
 
 public class PostBlock implements Serializable {
     private String title = "N/A";
-    private String description = "N/A";
+    private String content = "N/A";
     private Integer charCount = 0;
 
     public PostBlock(String t, String d){
         title = t;
-        description = d;
+        content = d;
     }
 
     public void setTitle(String inTitle) {
@@ -20,12 +20,12 @@ public class PostBlock implements Serializable {
         return this.title;
     }
 
-    public void setDescription(String inDesc) {
-        this.description = inDesc;
+    public void setContent(String inDesc) {
+        this.content = inDesc;
     }
 
-    public String getDescription() {
-        return this.description;
+    public String getContent() {
+        return this.content;
     }
 
 }
