@@ -1,5 +1,7 @@
 package com.example.avoiddit.model;
 
+import android.util.Log;
+
 import com.example.avoiddit.UserPreferences;
 import com.google.gson.Gson;
 import com.sys1yagi.mastodon4j.MastodonClient;
@@ -39,6 +41,7 @@ public class MastodonGatherer implements Gatherer {
 
              for (Status status : statuses){
                 content = status.getContent();
+                Log.d("CONTENT", content);
                 list.add(new PostBlock(title, content));
             }
         }
