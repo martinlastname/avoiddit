@@ -1,6 +1,7 @@
 package com.example.avoiddit.activities;
 
 import android.content.Intent;
+import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +11,9 @@ import android.widget.TextView;
 
 import com.example.avoiddit.PostListAdapter;
 import com.example.avoiddit.R;
+import com.example.avoiddit.model.MastodonGatherer;
 import com.example.avoiddit.model.PostBlock;
+import com.sys1yagi.mastodon4j.MastodonClient;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -49,7 +52,11 @@ public class MainActivity extends AppCompatActivity {
      * Intended to conveniently separate messy/temporary branch/feat specific code.
      */
     private void testMastodon(){
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
+        MastodonGatherer gatherer = new MastodonGatherer();
+        populatePostList(gatherer.gather(10));
     }
 
     private void populatePostList(){
@@ -63,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         for (PostBlock p : posts){
             mPostList.add(p);
         }
+        mPostList.add(new PostBlock("Hello", "World!"));
     }
 
     public void onPostItemClick(View view){

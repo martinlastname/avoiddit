@@ -7,9 +7,9 @@ public class PostBlock implements Serializable {
     private String content = "N/A";
     private Integer charCount = 0;
 
-    public PostBlock(String t, String d){
+    public PostBlock(String t, String c){
         title = t;
-        content = d;
+        content = c;
     }
 
     public void setTitle(String inTitle) {
